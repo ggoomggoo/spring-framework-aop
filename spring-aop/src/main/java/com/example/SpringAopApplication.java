@@ -20,7 +20,9 @@ public class SpringAopApplication {
 		
 //		executeAopBasic();
 		
-		executeAdviceSample();
+//		executeAdviceSample();
+		
+		// 
 		
 	}
 	

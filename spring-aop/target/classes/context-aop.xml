@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+		
+		<bean id="advice" class="onj.hello.aop2.OracleJavaAdvice"></bean>
+		<bean id="smallMart" class="onj.hello.aop2.SmallMart"></bean>
+
+		<aop:config>
+			<aop:pointcut expression="executeion(* onj.hello.aop2..getProducts*(String)) and bean(smallMart*)" id="onjpointcut"/>
+			<aop:aspect ref="advice">
+				<aop:before method="before" pointcut-ref="onjpointcut"/>
+				<aop:after-returning method="" pointcut-ref="onjpointcut"/>
+				<aop:around method="" pointcut-ref="onjpointcut"/>
+				<aop:after method="" pointcut-ref="onjpointcut"/>
+				<aop:after-throwing method="" pointcut-ref="onjpointcut"/>
+			</aop:aspect>
+		</aop:config>
+		
+
+</beans>
