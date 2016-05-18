@@ -1,7 +1,7 @@
 # spring-framework-aop
 
 ##
-t academy
-spring basic 2/3
+* t academy
+* spring basic 2/3
 
-spirng-boot
+* spirng-boot
