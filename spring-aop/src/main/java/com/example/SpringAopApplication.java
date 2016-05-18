@@ -4,8 +4,8 @@ import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.demo.AroundAdvice;
-import com.example.demo.TargetClass;
+import com.example.basic.AroundAdvice;
+import com.example.basic.TargetClass;
 
 @SpringBootApplication
 public class SpringAopApplication {
@@ -13,10 +13,18 @@ public class SpringAopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringAopApplication.class, args);
 		
-//		AOP basic code
-		aopBasic();
+//		aopBasic();
+		
+		
+		
+		
+		
 	}
 	
+	/**
+	 * AOP basic code
+	 * 
+	 */
 	public static void aopBasic() {
 		
 		TargetClass targetClass = new TargetClass(); // target
@@ -32,4 +40,7 @@ public class SpringAopApplication {
 		proxy.pointMethod(); // execute
 		
 	}
+	
+	
+	
 }
