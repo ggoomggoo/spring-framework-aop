@@ -13,20 +13,23 @@ public class SpringAopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringAopApplication.class, args);
 		
-		TargetClass targetClass = new TargetClass();
+//		AOP basic code
+		aopBasic();
+	}
+	
+	public static void aopBasic() {
 		
-		AroundAdvice aroundAdvice = new AroundAdvice();
+		TargetClass targetClass = new TargetClass(); // target
+		AroundAdvice aroundAdvice = new AroundAdvice(); // advice
+		ProxyFactory proxyFactory = new ProxyFactory(); // proxyFactory
 		
-		ProxyFactory proxyFactory = new ProxyFactory();
-		
-		proxyFactory.addAdvice(aroundAdvice);
-		
-		proxyFactory.setTarget(targetClass);
+		proxyFactory.addAdvice(aroundAdvice); // set advice
+		proxyFactory.setTarget(targetClass); // set target
 		
 //		proxyFactory.getProxy();
-		TargetClass proxy = (TargetClass) proxyFactory.getProxy();
+		TargetClass proxy = (TargetClass) proxyFactory.getProxy(); // proxy
 		
-		proxy.pointMethod();
+		proxy.pointMethod(); // execute
 		
 	}
 }
